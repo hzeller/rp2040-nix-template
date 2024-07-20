@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.25)
 
 # Need to include pico-sdk cmake support. Must happen before project.
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
@@ -29,5 +29,5 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 # Choice of available stdio outputs
-pico_enable_stdio_usb(${PROJECT_NAME} 1)
-pico_enable_stdio_uart(${PROJECT_NAME} 0)
+pico_enable_stdio_usb(${PROJECT_NAME} 1)  # ~13880 extra bytes
+pico_enable_stdio_uart(${PROJECT_NAME} 0) # ~1176 extra bytes
