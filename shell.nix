@@ -1,20 +1,10 @@
 { pkgs ? import <nixpkgs> {} }:
 let
-  local-pico-sdk = pkgs.pico-sdk.overrideDerivation (oldAttrs: {
-    src = pkgs.fetchFromGitHub {
-      owner = "raspberrypi";
-      repo = "pico-sdk";
-      rev = "1.5.1";
-      fetchSubmodules = true;
-      hash = "sha256-GY5jjJzaENL3ftuU5KpEZAmEZgyFRtLwGVg3W1e/4Ho=";
-    };
-  });
-
-  # The following is possible once
-  # https://github.com/NixOS/nixpkgs/pull/321786 is merged
-  # local-pico-sdk = pkgs.pico-sdk.override {
-  #   withSubmodules = true;
-  # };
+  # Needs to be synced past
+  # https://github.com/NixOS/nixpkgs/pull/321786
+  local-pico-sdk = pkgs.pico-sdk.override {
+     withSubmodules = true;
+  };
 in
 pkgs.mkShell {
   buildInputs = with pkgs;
