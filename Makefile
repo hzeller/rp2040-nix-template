@@ -2,7 +2,7 @@
 
 PROJECT=blink
 
-BOOTLOADER_PARTIION=/dev/sdb1                     # block device it shows up as.
+BOOTLOADER_PARTIION=/dev/disk/by-label/RPI-RP2   # block device it shows up as.
 BOOTLOADER_MOUNT_DIR=/run/media/$(USER)/RPI-RP2  # where udisksctl mounts it.
 
 TOOLCHAIN_PREFIX=arm-none-eabi-
