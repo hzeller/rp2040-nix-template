@@ -11,6 +11,8 @@ pkgs.mkShell {
     [
       gcc-arm-embedded
       local-pico-sdk
+      picotool
+
       cmake python3   # build requirements for pico-sdk
       udisks          # Interact with bootloader filesystem
       tio             # terminal program to interface with serial
